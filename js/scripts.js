@@ -1,15 +1,17 @@
 $(document).ready(function() {
   //Business Logic
+  var letter = /[a-zA-Z]/;
+  var vowel = ["a","e","i","o","u","y","A","E","I","O","U","Y"];
 
   var toPigLatin = function(sentence){
-
     //split sentence into an array
     var sentenceArray = sentence.split("");
 
-    if
-
-    return sentenceArray;
-
+    //Add "ay" to the end of single-letter words beginning with a vowel.
+    if (vowel.includes(sentenceArray[0])){
+      sentenceArray.push("ay");
+    }
+      return sentenceArray;
   }
 
   //User Interface Logic
@@ -18,7 +20,7 @@ $(document).ready(function() {
     //grab user input
     var sentence = $("#userSentence").val();
 
-    alert(toPigLatin(sentence));
+    console.log(toPigLatin(sentence));
 
   });
 
