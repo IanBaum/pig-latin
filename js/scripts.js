@@ -2,7 +2,7 @@ $(document).ready(function() {
   //Business Logic
   var letter = /[a-zA-Z]/;
   var vowel = ["a","e","i","o","u","y","A","E","I","O","U","Y"];
-  var isVowel = false;
+  var count = 0;
 
   var toPigLatin = function(sentence){
     //split sentence into an array
@@ -14,17 +14,23 @@ $(document).ready(function() {
       sentenceArray.push("ay");
     }
     // For words beginning with one consonant, move the first consonant to the end of the word, and add "ay".
-    for (var index = 0; index < vowel.length; index++) {
-      if (sentenceArray[0] === vowel[index]){
-        isVowel = true;
-      }
-    }
-    if(!isVowel){
-      sentenceArray.push(sentenceArray[0]);
-      sentenceArray.splice(0,1);
-      sentenceArray.push("ay");
+    // For words beginning with more than one consonant, move all of the first consecutive consonants to the end, and add "ay".
+    else {
+      // sentenceArray.push(sentenceArray[0]);
+      // sentenceArray.splice(0,1);
+      for(var index = 0; index < sentence.length;index++){
+        if(!vowel.includes(sentenceArray[0])){
+          sentenceArray.push(sentenceArray[0]);
+          sentenceArray.splice(0,1)
+        }else if(vowel.includes(sentenceArray[0])){
+          break;
 
+        }
+      }
+      sentenceArray.push("ay");
     }
+
+
       return sentenceArray;
   }
 
