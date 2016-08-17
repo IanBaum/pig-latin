@@ -10,47 +10,42 @@ This is an application that translates a sentence into Pig Latin using condition
 
 ## Specifications
 
-#### 1. Collect user's input and split it into an array
-
-* Example Input: user's sentence
-* Example Output: "u","s","e","r","'","s"," ","s","e","n","t","e","n","c","e"
-
-#### 2. Do nothing to non-alphabetical characters, since they do not contain consonants or vowels.
+#### 1. Do nothing to non-alphabetical characters, since they do not contain consonants or vowels.
 
 * Example Input: 3
 * Example Output: 3
 
-#### 3. Add "ay" to the end of single-letter words beginning with a vowel.
+#### 2. Add "ay" to the end of single-letter words beginning with a vowel.
 
 * Example Input: i
 * Example Output: iay
 
-#### 4. Add "ay" to the end of words beginning with a vowel.
+#### 3. Add "ay" to the end of words beginning with a vowel.
 
 * Example Input: apple
 * Example Output: appleay
 
-#### 5. For words beginning with one consonant, move the first consonant to the end of the word, and add "ay".
+#### 4. For words beginning with one consonant, move the first consonant to the end of the word, and add "ay".
 
 * Example Input: kitten
 * Example Output: ittenkay
 
-#### 6. For words beginning with more than one consonant, move all of the first consecutive consonants to the end, and add "ay".
+#### 5. For words beginning with more than one consonant, move all of the first consecutive consonants to the end, and add "ay".
 
 * Example Input: dragon
 * Example Output: agondray
 
-#### 7. For words beginning with "qu", move the "u" along with the "q".
+#### 6. For words beginning with "qu", move the "u" along with the "q".
 
 * Example Input: quack
 * Example Output: ackquay
 
-#### 8. If the first consonants include "qu", move the "u" along with the "q".
+#### 7. If the first consonants include "qu" but do not start with "qu", move the "u" along with the "q".
 
 * Example Input: squeal
 * Example Output: ealsquay
 
-#### 9. For words beginning with "y", treat "y" as a consonant.
+#### 8. For words beginning with "y", treat "y" as a consonant.
 
 * Example Input: your
 * Example Output: youray
