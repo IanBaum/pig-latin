@@ -10,14 +10,17 @@ $(document).ready(function() {
 
     //Add "ay" to the end of single-letter words beginning with a vowel.
     //Add "ay" to the end of words beginning with a vowel.
-    if (vowel.includes(sentenceArray[0])){
+    if (vowel.includes(sentenceArray[0]) && sentenceArray[0] !== "y" && sentenceArray[0] !== "Y"){
       sentenceArray.push("ay");
     }
 
     else {
-
+      if(sentenceArray[0] === "y" || sentenceArray[0] === "Y"){
+        sentenceArray.push(sentenceArray[0]);
+        sentenceArray.splice(0,1)
+      }
       for(var index = 0; index < sentence.length;index++){
-        //For words beginning with "qu", move the "u" along with the "q".
+        // If the beginning consonants include "qu", move the "u" along with the "q".
         if(sentenceArray[0] === "q" && sentenceArray[1] === "u"){
           sentenceArray.push(sentenceArray[0],sentenceArray[1]);
           sentenceArray.splice(0,2);
