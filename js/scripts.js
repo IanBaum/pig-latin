@@ -8,6 +8,7 @@ $(document).ready(function() {
     var sentenceArray = sentence.split("");
 
     //Add "ay" to the end of single-letter words beginning with a vowel.
+    //Add "ay" to the end of words beginning with a vowel.
     if (vowel.includes(sentenceArray[0])){
       sentenceArray.push("ay");
     }
