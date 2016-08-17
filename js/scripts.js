@@ -13,18 +13,22 @@ $(document).ready(function() {
     if (vowel.includes(sentenceArray[0])){
       sentenceArray.push("ay");
     }
-    // For words beginning with one consonant, move the first consonant to the end of the word, and add "ay".
-    // For words beginning with more than one consonant, move all of the first consecutive consonants to the end, and add "ay".
+
     else {
-      // sentenceArray.push(sentenceArray[0]);
-      // sentenceArray.splice(0,1);
+
       for(var index = 0; index < sentence.length;index++){
-        if(!vowel.includes(sentenceArray[0])){
+        //For words beginning with "qu", move the "u" along with the "q".
+        if(sentenceArray[0] === "q" && sentenceArray[1] === "u"){
+          sentenceArray.push(sentenceArray[0],sentenceArray[1]);
+          sentenceArray.splice(0,2);
+        }
+        // For words beginning with one consonant, move the first consonant to the end of the word, and add "ay".
+        // For words beginning with more than one consonant, move all of the first consecutive consonants to the end, and add "ay".
+        else if(!vowel.includes(sentenceArray[0])){
           sentenceArray.push(sentenceArray[0]);
           sentenceArray.splice(0,1)
         }else if(vowel.includes(sentenceArray[0])){
           break;
-
         }
       }
       sentenceArray.push("ay");
